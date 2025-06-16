@@ -10,11 +10,29 @@ import { provideHttpClient } from '@angular/common/http';
 import { MainComponent } from './layouts/main/main.component';
 import { RegisterExpensesComponent } from './pages/register-expenses/register-expenses.component';
 import { RegisterCashComponent } from './pages/register-cash/register-cash.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { providePrimeNG } from 'primeng/config';
+import Aura from '@primeng/themes/aura';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, HistoryComponent, MainComponent, RegisterExpensesComponent, RegisterCashComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    HistoryComponent,
+    MainComponent,
+    RegisterExpensesComponent,
+    RegisterCashComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, SharedModule],
-  providers: [provideHttpClient()],
+  providers: [
+    provideHttpClient(),
+    provideAnimationsAsync(),
+    providePrimeNG({
+      theme: {
+        preset: Aura,
+      },
+    }),
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
