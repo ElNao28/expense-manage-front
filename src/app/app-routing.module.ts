@@ -1,10 +1,57 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { MainComponent } from './layouts/main/main.component';
+import { HomeComponent } from './pages/home/home.component';
+import { HistoryComponent } from './pages/history/history.component';
+import { RegisterExpensesComponent } from './pages/register-expenses/register-expenses.component';
+import { RegisterCashComponent } from './pages/register-cash/register-cash.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    component: MainComponent,
+    children: [
+      {
+        path: 'home',
+        component: HomeComponent,
+        title: 'Inicio',
+      },
+      {
+        path: 'historial',
+        component: HistoryComponent,
+        title: 'Historial',
+      },
+      {
+        path: 'registro',
+        component: RegisterExpensesComponent,
+        title: 'Registro',
+      },
+      {
+        path: 'dinero',
+        component: RegisterCashComponent,
+        title: 'Dinero',
+      },
+      {
+        path: '',
+        redirectTo: '/home',
+        pathMatch: 'full',
+      },
+    ],
+  },
+  {
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full',
+  },
+  {
+    path: '**',
+    redirectTo: '/home',
+    pathMatch: 'full',
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

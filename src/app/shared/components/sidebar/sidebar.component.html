@@ -1,0 +1,33 @@
+<div class="h-full sidebar bg-gray-900 text-white px-5 py-3">
+  <ul class="flex flex-col">
+    <li class="flex justify-center mb-[2rem]">
+      <img src="favicon.png" alt="icon" class="w-24" />
+    </li>
+    <div class="options flex flex-col gap-8">
+      <li
+        class="hover:text-gray-400 cursor-pointer text-lg"
+        [routerLink]="['/inicio']"
+      >
+        Inicio
+      </li>
+      <li
+        class="hover:text-gray-400 cursor-pointer text-lg"
+        [routerLink]="['/registro']"
+      >
+        Registro de gastos
+      </li>
+      <li
+        class="hover:text-gray-400 cursor-pointer text-lg"
+        [routerLink]="['/historial']"
+      >
+        Historial
+      </li>
+      <li
+        class="hover:text-gray-400 cursor-pointer text-lg"
+        [routerLink]="['/dinero']"
+      >
+        Dinero
+      </li>
+    </div>
+  </ul>
+</div>

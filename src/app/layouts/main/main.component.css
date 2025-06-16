@@ -1,0 +1,13 @@
+.main-layout {
+  width: 100vw;
+  height: 100vh;
+}
+.header-container {
+  height: 10%;
+}
+.body-container {
+  height: 75%;
+}
+.footer-container {
+  height: 15%;
+}
