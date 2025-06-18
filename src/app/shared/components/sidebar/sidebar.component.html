@@ -1,30 +1,36 @@
-<div class="h-full sidebar bg-gray-900 text-white px-5 py-3">
+<div class="h-full sidebar bg-gray-950 text-white py-3">
   <ul class="flex flex-col">
-    <li class="flex justify-center mb-[2rem] mt-[1rem]">
+    <li
+      class="flex justify-center mb-[2rem] mt-[1rem] border-b-2 border-gray-700 mx-4 pb-8"
+    >
       <img src="favicon.png" alt="icon" class="w-24" />
     </li>
-    <div class="options flex flex-col gap-8">
+    <div class="options flex flex-col gap-5 px-2">
       <li
-        class="hover:text-gray-400 cursor-pointer text-lg"
+        class="cursor-pointer text-lg"
         [routerLink]="['/inicio']"
+        routerLinkActive=" border-2 shadow-md shadow-blue-100 active"
       >
         Inicio
       </li>
       <li
-        class="hover:text-gray-400 cursor-pointer text-lg"
+        class="cursor-pointer text-lg"
         [routerLink]="['/registro']"
+        routerLinkActive=" border-2 shadow-md shadow-blue-100 active"
       >
         Registro de gastos
       </li>
       <li
-        class="hover:text-gray-400 cursor-pointer text-lg"
+        class="cursor-pointer text-lg"
         [routerLink]="['/historial']"
+        routerLinkActive=" border-2 shadow-md shadow-blue-100 active"
       >
         Historial
       </li>
       <li
-        class="hover:text-gray-400 cursor-pointer text-lg"
+        class="cursor-pointer text-lg"
         [routerLink]="['/dinero']"
+        routerLinkActive=" border-2 shadow-md shadow-blue-100 active"
       >
         Dinero
       </li>

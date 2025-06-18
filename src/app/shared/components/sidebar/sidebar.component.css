@@ -1,3 +1,10 @@
 .options li{
   transition: 0.2s;
+  /* border: 2px solid; */
+  padding: 0.5rem 1rem;
+  border-radius: 0.6rem;
+}
+.active{
+  background: linear-gradient(209deg,rgb(3, 0, 96) 0%, rgba(0, 8, 4, 1) 50%, rgba(0, 0, 0, 1) 100%);
+  font-weight: bold;
 }

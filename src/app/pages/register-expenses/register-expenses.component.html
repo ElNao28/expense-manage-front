@@ -1,1 +1,24 @@
-<p>register-expenses works!</p>
+<section class="flex flex-col gap-5">
+  <app-search-bar></app-search-bar>
+  <div>
+    <p-table showGridlines [tableStyle]="{ 'min-width': '50rem' }">
+      <ng-template #header>
+        <tr>
+          <th>#</th>
+          <th>Descripccion</th>
+          <th>Fecha</th>
+          <th>Total</th>
+        </tr>
+      </ng-template>
+      <ng-template #body let-product>
+        <tr>
+          <td>{{ product.code }}</td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.category }}</td>
+          <td>{{ product.quantity }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</section>
+<app-dialog-register></app-dialog-register>

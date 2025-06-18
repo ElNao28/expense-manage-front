@@ -13,7 +13,10 @@ import { RegisterCashComponent } from './pages/register-cash/register-cash.compo
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeng/themes/aura';
-
+import { TableModule } from 'primeng/table';
+import { DialogModule } from 'primeng/dialog';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { DialogRegisterComponent } from './components/dialog-register/dialog-register.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,8 +25,16 @@ import Aura from '@primeng/themes/aura';
     MainComponent,
     RegisterExpensesComponent,
     RegisterCashComponent,
+    SearchBarComponent,
+    DialogRegisterComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, SharedModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    SharedModule,
+    TableModule,
+    DialogModule,
+  ],
   providers: [
     provideHttpClient(),
     provideAnimationsAsync(),

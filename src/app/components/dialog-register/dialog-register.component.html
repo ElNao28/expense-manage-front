@@ -1,0 +1,22 @@
+<p-dialog
+  header="Nuevo registro"
+  [modal]="true"
+  [visible]="false"
+  [draggable]="false"
+  [style]="{ width: '50vw' }"
+>
+  <form class="flex flex-col gap-5 justify-between mb-5">
+    <div class="flex flex-col gap-2">
+      <label for="description">Descripccion</label>
+      <input type="text" class="outline-0 border-b-2 border-white" />
+    </div>
+    <div class="flex flex-col">
+      <label for="purchaseDate">Fecha de transaccion</label>
+      <input type="date"  />
+    </div>
+    <div class="flex flex-col">
+      <label for="amount">Monto</label>
+      <input type="number" class="outline-0 border-b-2 border-white" />
+    </div>
+  </form>
+</p-dialog>
