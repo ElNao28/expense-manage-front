@@ -22,4 +22,7 @@ export class ExpensesService {
       newRegister
     );
   }
+  public getAllRegisterOfExpenses(): Observable<Response<Expense[]>> {
+    return this.http.get<Response<Expense[]>>(`${this.apiUrl}expenses/list`);
+  }
 }
