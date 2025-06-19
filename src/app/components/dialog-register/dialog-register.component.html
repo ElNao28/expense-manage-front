@@ -1,22 +1,50 @@
 <p-dialog
   header="Nuevo registro"
   [modal]="true"
-  [visible]="false"
   [draggable]="false"
   [style]="{ width: '50vw' }"
+  [(visible)]="isOpen"
+  (onHide)="closeDialog()"
 >
-  <form class="flex flex-col gap-5 justify-between mb-5">
+  <form
+    [formGroup]="registerForm"
+    class="flex flex-col gap-5 justify-between mb-5"
+  >
     <div class="flex flex-col gap-2">
       <label for="description">Descripccion</label>
-      <input type="text" class="outline-0 border-b-2 border-white" />
+      <input
+        formControlName="description"
+        type="text"
+        class="outline-0 border-b-2 border-white"
+      />
     </div>
     <div class="flex flex-col">
       <label for="purchaseDate">Fecha de transaccion</label>
-      <input type="date"  />
+      <input formControlName="purchaseDate" type="date" />
     </div>
     <div class="flex flex-col">
       <label for="amount">Monto</label>
-      <input type="number" class="outline-0 border-b-2 border-white" />
+      <input
+        formControlName="amount"
+        type="number"
+        class="outline-0 border-b-2 border-white"
+      />
+    </div>
+    <div class="flex items-center gap-5 justify-end">
+      <button
+        class="px-3 py-2 bg-gray-800 rounded-md font-bold shadow-md cursor-pointer hover:bg-gray-900 shadow-gray-700"
+        type="button"
+        (click)="saveButtonAction()"
+      >
+        Guardar
+      </button>
+      <button
+        class="px-3 py-2 bg-red-900 rounded-md font-bold shadow-md cursor-pointer hover:bg-red-600 shadow-red-700"
+        type="button"
+        (click)="closeDialog()"
+      >
+        Cancelar
+      </button>
     </div>
   </form>
 </p-dialog>

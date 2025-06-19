@@ -1,5 +1,5 @@
 <section class="flex flex-col gap-5">
-  <app-search-bar></app-search-bar>
+  <app-search-bar (valueButton)="isOpen = $event"></app-search-bar>
   <div>
     <p-table showGridlines [tableStyle]="{ 'min-width': '50rem' }">
       <ng-template #header>
@@ -21,4 +21,7 @@
     </p-table>
   </div>
 </section>
-<app-dialog-register></app-dialog-register>
+<app-dialog-register
+  (closeDialogEvent)="isOpen = $event"
+  [isOpen]="isOpen"
+></app-dialog-register>

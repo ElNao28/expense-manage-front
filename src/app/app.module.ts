@@ -17,6 +17,7 @@ import { TableModule } from 'primeng/table';
 import { DialogModule } from 'primeng/dialog';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { DialogRegisterComponent } from './components/dialog-register/dialog-register.component';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +35,7 @@ import { DialogRegisterComponent } from './components/dialog-register/dialog-reg
     SharedModule,
     TableModule,
     DialogModule,
+    ReactiveFormsModule,
   ],
   providers: [
     provideHttpClient(),

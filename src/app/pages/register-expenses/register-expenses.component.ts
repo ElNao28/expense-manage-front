@@ -4,8 +4,8 @@ import { Component } from '@angular/core';
   selector: 'app-register-expenses',
   standalone: false,
   templateUrl: './register-expenses.component.html',
-  styleUrl: './register-expenses.component.css'
+  styleUrl: './register-expenses.component.css',
 })
 export class RegisterExpensesComponent {
-
+  public isOpen: boolean = false;
 }
