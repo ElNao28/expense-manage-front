@@ -5,6 +5,7 @@ import { CreateRegister } from '../interfaces/Create-register.interface';
 import { Response } from '../interfaces/Response.interface';
 import { Expense } from '../interfaces/Expense.interface';
 import { Observable } from 'rxjs';
+import { History } from '../interfaces/History.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -24,5 +25,9 @@ export class ExpensesService {
   }
   public getAllRegisterOfExpenses(): Observable<Response<Expense[]>> {
     return this.http.get<Response<Expense[]>>(`${this.apiUrl}expenses/list`);
+  }
+
+  public getHistory(): Observable<Response<History[]>> {
+    return this.http.get<Response<History[]>>(`${this.apiUrl}history/list`);
   }
 }
