@@ -23,7 +23,7 @@
         <tr>
           <td>{{ expense.id }}</td>
           <td>{{ expense.description }}</td>
-          <td>{{ expense.purchaseDate }}</td>
+          <td>{{ expense.purchaseDate | date }}</td>
           <td>${{ expense.amount }}</td>
         </tr>
       </ng-template>

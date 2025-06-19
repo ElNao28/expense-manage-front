@@ -1,6 +1,4 @@
-:host ::ng-deep .custom-table{
-  border-radius: 9px;
-}
+
 :host ::ng-deep .custom-table .p-datatable-thead > tr > th {
   background-color: #ffffff;
   color: black;

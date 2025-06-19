@@ -2,7 +2,7 @@
   header="Nuevo registro"
   [modal]="true"
   [draggable]="false"
-  [style]="{ width: '50vw' }"
+  [style]="{ width: '35vw' }"
   [(visible)]="isOpen"
   (onHide)="closeDialog()"
   [closeOnEscape]="false"
@@ -19,11 +19,11 @@
         class="outline-0 border-b-2 border-white"
       />
     </div>
-    <div class="flex flex-col">
+    <div class="flex flex-col gap-2">
       <label for="purchaseDate">Fecha de transaccion</label>
       <input formControlName="purchaseDate" type="date" class="outline-0" />
     </div>
-    <div class="flex flex-col">
+    <div class="flex flex-col gap-2">
       <label for="amount">Monto</label>
       <input
         formControlName="amount"
