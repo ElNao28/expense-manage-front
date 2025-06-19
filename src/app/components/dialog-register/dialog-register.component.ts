@@ -2,6 +2,8 @@ import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ExpensesService } from '../../services/expenses.service';
 import { map } from 'rxjs';
+import { ConfirmDialogService } from '../../services/confirm-dialog.service';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-dialog-register',
@@ -10,7 +12,11 @@ import { map } from 'rxjs';
   styleUrl: './dialog-register.component.css',
 })
 export class DialogRegisterComponent {
-  constructor(private expenseService: ExpensesService) {}
+  constructor(
+    private expenseService: ExpensesService,
+    private confirmDialogService: ConfirmDialogService,
+    private messageService: MessageService
+  ) {}
 
   @Input()
   public isOpen: boolean = false;
@@ -27,12 +33,17 @@ export class DialogRegisterComponent {
   });
 
   public closeDialog(): void {
+    this.registerForm.reset();
     this.closeDialogEvent.emit(false);
   }
 
   public saveButtonAction(): void {
     if (this.registerForm.invalid) return;
-    this.saveRegister();
+    this.confirmDialogService.openConfirmDialog().confirm({
+      accept: () => {
+        this.saveRegister();
+      },
+    });
   }
 
   private saveRegister(): void {
@@ -41,9 +52,20 @@ export class DialogRegisterComponent {
       .pipe(map((res) => res.data))
       .subscribe({
         next: (expense) => {
-          console.log(expense);
+          this.messageService.add({
+            severity: 'success',
+            summary: 'Success',
+            detail: 'Se agrego el registro',
+          });
+          this.closeDialog();
         },
-        error: () => console.log,
+        error: () => {
+          this.messageService.add({
+            severity: 'error',
+            summary: 'Error',
+            detail: 'Ah ocurrido un error.',
+          });
+        },
       });
   }
 }

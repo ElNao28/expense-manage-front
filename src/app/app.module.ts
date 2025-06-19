@@ -15,9 +15,13 @@ import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeng/themes/aura';
 import { TableModule } from 'primeng/table';
 import { DialogModule } from 'primeng/dialog';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ToastModule } from 'primeng/toast';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { DialogRegisterComponent } from './components/dialog-register/dialog-register.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ConfirmationService, MessageService } from 'primeng/api';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +40,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     TableModule,
     DialogModule,
     ReactiveFormsModule,
+    ConfirmDialogModule,
+    ToastModule,
   ],
   providers: [
     provideHttpClient(),
@@ -45,6 +51,8 @@ import { ReactiveFormsModule } from '@angular/forms';
         preset: Aura,
       },
     }),
+    ConfirmationService,
+    MessageService,
   ],
   bootstrap: [AppComponent],
 })
