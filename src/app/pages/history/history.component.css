@@ -1,0 +1,12 @@
+
+:host ::ng-deep .custom-table .p-datatable-thead > tr > th {
+  background-color: #ffffff;
+  color: black;
+  text-align: center;
+  font-weight: bold;
+}
+:host ::ng-deep .custom-table .p-datatable-tbody > tr > td {
+  background-color: #ffffff;
+  color: black;
+  text-align: center;
+}
